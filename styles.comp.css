@@ -2,7 +2,8 @@ body {
   background-color: #fff;
   background-image: url("../img/bg.svg");
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-size: cover; }
   @media (min-width: 768px) {
     body {
       background-size: 170%; } }
@@ -13,25 +14,44 @@ body {
     font-weight: bold;
     color: #26315f;
     font-family: verdana, sans-serif; }
+  body figure {
+    height: 110%; }
+  body figcaption {
+    width: 40%;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #26315f;
+    font-family: 'Caveat', cursive;
+    background-color: #fff;
+    margin-bottom: 3%;
+    transition: transform .5s; }
   body .img-wrapper {
     height: auto;
-    margin-bottom: 130px;
+    margin-top: 1rem;
+    margin-bottom: 15rem;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.3)); }
-    body .img-wrapper .gallery__img {
-      width: 200%;
-      transition: .5s;
-      border: 1px solid #ddd; }
-      body .img-wrapper .gallery__img:hover {
-        transform: scale(1.1); }
-      body .img-wrapper .gallery__img--1 {
-        clip-path: circle(35% at 50% 50%); }
-      body .img-wrapper .gallery__img--2 {
-        clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%); }
-      body .img-wrapper .gallery__img--3 {
-        clip-path: polygon(20% 0%, 80% 0%, 80% 80%, 20% 80%); }
-      body .img-wrapper .gallery__img--4 {
-        width: 55%;
-        clip-path: polygon(50% 0%, 100% 65%, 0% 65%); }
+  body .gallery__img {
+    width: 200%;
+    transition: transform .5s;
+    border: 1px solid #ddd; }
+    body .gallery__img:hover {
+      transform: scale(1.1); }
+      body .gallery__img:hover ~ * {
+        transform: translateY(15%); }
+    body .gallery__img--1 {
+      clip-path: circle(35% at 50% 50%); }
+    body .gallery__img--2 {
+      clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%); }
+    body .gallery__img--3 {
+      clip-path: polygon(20% 0%, 80% 0%, 80% 80%, 20% 80%); }
+      body .gallery__img--3__figcap {
+        margin-top: -3%; }
+    body .gallery__img--4 {
+      width: 55%;
+      clip-path: polygon(50% 0%, 100% 65%, 0% 65%); }
+      body .gallery__img--4__figcap {
+        margin-top: -20%; }
   body .overlay {
     position: fixed;
     display: none;
@@ -61,7 +81,7 @@ body {
       object-fit: cover;
       transition: 1s; }
       body .overlay__img:hover {
-        transform: scale(1.1); }
+        transform: scale(1.05); }
     body .overlay__close {
       position: absolute;
       top: 0;

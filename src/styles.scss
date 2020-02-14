@@ -7,6 +7,7 @@ body {
     background-image: url('../img/bg.svg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 
     @include media-breakpoint-up(md) { 
         background-size: 170%;
@@ -22,39 +23,69 @@ body {
         font-family: verdana, sans-serif;
     }
 
+    figure {
+        height: 110%;
+    }
+
+    figcaption {
+        width: 40%;
+        margin: auto;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #26315f;
+        font-family: 'Caveat', cursive;
+        background-color: #fff;
+        margin-bottom: 3%;
+        transition: transform .5s;
+    }
+
     .img-wrapper {
         height: auto;
-        margin-bottom: 130px;
+        margin-top: 1rem;
+        margin-bottom: 15rem;
         filter: drop-shadow(10px 10px 10px rgba(0,0,0,.3));
+    }
 
-        .gallery {
-            &__img {
-                width: 200%;
-                transition: .5s;
-                border: 1px solid #ddd;
+    .gallery {
+        &__img {
+            width: 200%;
+            transition: transform .5s;
+            border: 1px solid #ddd;
+
+            &:hover {
+                transform: scale(1.1);
+
+                & ~ * {
+                    transform: translateY(15%);
+                }
+            }
+
+            &--1 {
+                clip-path: circle(35% at 50% 50%);
+            }
     
-                &:hover {
-                    transform: scale(1.1);
-                }
+            &--2 {
+                clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
+            }
+    
+            &--3 {
+                clip-path: polygon(20% 0%, 80% 0%, 80% 80%, 20% 80%);
 
-                &--1 {
-                    clip-path: circle(35% at 50% 50%);
+                &__figcap {
+                    margin-top: -3%;
                 }
-        
-                &--2 {
-                    clip-path: polygon(20% 20%, 80% 20%, 80% 80%, 20% 80%);
-                }
-        
-                &--3 {
-                    clip-path: polygon(20% 0%, 80% 0%, 80% 80%, 20% 80%);
-                }
-        
-                &--4 {
-                    width: 55%;
-                    clip-path: polygon(50% 0%, 100% 65%, 0% 65%);
+            }
+    
+            &--4 {
+                width: 55%;
+                clip-path: polygon(50% 0%, 100% 65%, 0% 65%);
+
+                &__figcap {
+                    margin-top: -20%;
                 }
             }
         }
+        
     }
 
     .overlay {
@@ -93,7 +124,7 @@ body {
             transition: 1s;
 
             &:hover {
-                transform: scale(1.1);
+                transform: scale(1.05);
             }
         }
 
